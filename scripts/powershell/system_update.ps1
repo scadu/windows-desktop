@@ -1,0 +1,61 @@
+$BinariesDirectory = "$HOME\.bin\"
+$WslDistro = "Ubuntu"
+
+function Get-WslUpdate {
+    Write-Output "Updating $WslDistro packages"
+    wsl -d $WslDistro -u root -e apt-get update -qq
+    wsl -d $WslDistro -u root -e apt-get upgrade -yq
+    # Check if it exited with a non-zero status
+    if (!$?) {
+        Write-Error "$WslDistro upgrade failed"
+    }
+}
+
+function Get-ScoopUpdate {
+    try {
+        Write-Output "Updating scoop packages"
+        scoop update *
+    }
+    catch [System.Management.Automation.CommandNotFoundException] {
+        Write-Output "Scoop not found. Skipping"
+    }
+}
+
+function Get-ProgramsUpdate {
+    $PatchMyPCBinary = "https://patchmypc.com/freeupdater/PatchMyPC.exe"
+    try {
+        if (Test-Path $BinariesDirectory\PatchMyPC.exe -PathType Leaf) {
+            Write-Output "Updating programs with PatchMyPC"
+            Start-Process -FilePath "$BinariesDirectory\PatchMyPC.exe" -ArgumentList "/auto"
+        }
+        else {
+            Write-Warning "PatchMyPC not found. Downloading..."
+            Invoke-WebRequest $PatchMyPCBinary -OutFile "$BinariesDirectory\PatchMyPC.exe"
+        }
+    }
+    catch {
+        Write-Error "Error: $($_.Exception.Message)"
+    }
+}
+
+function Get-WindowsUpdate {
+    Write-Output "Looking for Windows updates"
+    $WindowsUpdateModule = "PSWindowsUpdate"
+    try {
+        if (Get-Module -ListAvailable -Name $WindowsUpdateModule) {
+            # TODO: Check if it could be run with `-RunAs`
+            sudo Get-WindowsUpdate -Category 'Security Updates', 'Critical Updates' -Verbose -AcceptAll
+        }
+        else {
+            Install-Module -Name $WindowsUpdateModule -Confirm:$False -Force
+        }
+    }
+    catch {
+        Write-Error "Error: $($_.Exception.Message)"
+    }
+}
+
+Get-ProgramsUpdate
+Get-WindowsUpdate
+Get-WslUpdate
+Get-ScoopUpdate
