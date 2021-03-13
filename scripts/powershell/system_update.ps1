@@ -28,15 +28,9 @@ function Get-ProgramsUpdate {
         Invoke-WebRequest $PatchMyPCBinary -OutFile "$BinariesDirectory\PatchMyPC.exe"
     }
     try {
-        if (Test-Path $BinariesDirectory\PatchMyPC.exe -PathType Leaf) {
             Write-Output "Updating programs with PatchMyPC"
             Start-Process -FilePath "$BinariesDirectory\PatchMyPC.exe" -ArgumentList "/auto"
         }
-        else {
-            Write-Warning "PatchMyPC not found. Downloading..."
-            Invoke-WebRequest $PatchMyPCBinary -OutFile "$BinariesDirectory\PatchMyPC.exe"
-        }
-    }
     catch {
         Write-Error "Error: $($_.Exception.Message)"
     }
