@@ -23,6 +23,10 @@ function Get-ScoopUpdate {
 
 function Get-ProgramsUpdate {
     $PatchMyPCBinary = "https://patchmypc.com/freeupdater/PatchMyPC.exe"
+    if (-not(Test-Path $BinariesDirectory\PatchMyPC.exe -PathType Leaf)) {
+        Write-Warning "PatchMyPC not found. Downloading..."
+        Invoke-WebRequest $PatchMyPCBinary -OutFile "$BinariesDirectory\PatchMyPC.exe"
+    }
     try {
         if (Test-Path $BinariesDirectory\PatchMyPC.exe -PathType Leaf) {
             Write-Output "Updating programs with PatchMyPC"
