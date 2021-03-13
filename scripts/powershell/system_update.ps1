@@ -28,9 +28,9 @@ function Get-ProgramsUpdate {
         Invoke-WebRequest $PatchMyPCBinary -OutFile "$BinariesDirectory\PatchMyPC.exe"
     }
     try {
-            Write-Output "Updating programs with PatchMyPC"
-            Start-Process -FilePath "$BinariesDirectory\PatchMyPC.exe" -ArgumentList "/auto"
-        }
+        Write-Output "Updating programs with PatchMyPC"
+        Start-Process -FilePath "$BinariesDirectory\PatchMyPC.exe" -ArgumentList "/auto"
+    }
     catch {
         Write-Error "Error: $($_.Exception.Message)"
     }
@@ -39,14 +39,12 @@ function Get-ProgramsUpdate {
 function Get-WindowsUpdate {
     Write-Output "Looking for Windows updates"
     $WindowsUpdateModule = "PSWindowsUpdate"
+    if (-not(Get-Module -ListAvailable -Name $WindowsUpdateModule)) {
+        Install-Module -Name $WindowsUpdateModule -Confirm:$False -Force -Scope CurrentUser
+    }
     try {
-        if (Get-Module -ListAvailable -Name $WindowsUpdateModule) {
-            # TODO: Check if it could be run with `-RunAs`
-            sudo Get-WindowsUpdate -Category 'Security Updates', 'Critical Updates' -Verbose -AcceptAll
-        }
-        else {
-            Install-Module -Name $WindowsUpdateModule -Confirm:$False -Force
-        }
+        # TODO: Check if it could be run with `-RunAs`
+        sudo Get-WindowsUpdate -Category 'Security Updates', 'Critical Updates' -Verbose -AcceptAll
     }
     catch {
         Write-Error "Error: $($_.Exception.Message)"
