@@ -1,3 +1,5 @@
+$ErrorActionPreference = "Stop"
+$ErrorActionPreference = "Stop"
 $BinariesDirectory = "$HOME\.bin\"
 $WslDistro = "Ubuntu"
 
