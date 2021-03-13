@@ -15,14 +15,14 @@ $Requirements = @(
         Describe = "WSL is enabled"
         Test     = { (Get-WindowsOptionalFeature -Online -FeatureName 'Microsoft-Windows-Subsystem-Linux' | Select-Object -ExpandProperty State) -eq "Enabled" }
         Set      = {
-            Enable-WindowsOptionalFeature -Online -FeatureName 'Microsoft-Windows-Subsystem-Linux' -All | Out-Null
+            Enable-WindowsOptionalFeature -Online -FeatureName 'Microsoft-Windows-Subsystem-Linux' -All -NoRestart | Out-Null
         }
     },
     @{
         Describe = "Virtual Machine Platform is enabled"
         Test     = { (Get-WindowsOptionalFeature -Online -FeatureName 'VirtualMachinePlatform' | Select-Object -ExpandProperty State) -eq "Enabled" }
         Set      = {
-            Enable-WindowsOptionalFeature -Online -FeatureName 'VirtualMachinePlatform' -All | Out-Null
+            Enable-WindowsOptionalFeature -Online -FeatureName 'VirtualMachinePlatform' -All -NoRestart | Out-Null
         }
     }
 )
