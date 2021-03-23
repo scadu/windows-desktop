@@ -10,7 +10,7 @@ You can do it by enabling [Developer Mode](https://docs.microsoft.com/en-us/wind
 ###### Local Security Policy
 Open `Local Security Policy` (`secpol.msc`) and go to `Local Policies` -> `User Rights Assignment`, select `Create symbolic links`, add your user to the list and **reboot**.
 
-> Haven't found a reliable way to automate it.
+> I haven't found a reliable way to automate it.
 > It's possible to export Local Security Policy to a file, edit the file and import back but I'm not convinced of this method.
 
 #### Enable long paths
