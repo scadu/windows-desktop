@@ -25,3 +25,20 @@ You can enable long path support editing the registry key or administrative temp
 ##### Group policy
 `Computer Configuration > Administrative Templates > System > Filesystem > Enable Win32 long paths`.
 ___
+
+### Caveats
+
+#### High DPI
+[Windows scaling issues](https://support.microsoft.com/en-us/topic/windows-scaling-issues-for-high-dpi-devices-508483cd-7c59-0d08-12b0-960b99aa347d)
+
+[Fix apps that appear blurry in Windows 10](https://support.microsoft.com/en-us/windows/fix-apps-that-appear-blurry-in-windows-10-e9fe34ab-e7e7-bc6f-6695-cb169b51de0f)
+
+[Make older apps or programs compatible with Windows 10](https://support.microsoft.com/en-us/windows/make-older-apps-or-programs-compatible-with-windows-10-783d6dd7-b439-bdb0-0490-54eea0f45938)
+
+For some reason, the trick with compatibility mode works for [PatchMyPC](https://patchmypc.com/home-updater) (which is DPI-unaware), when setting `Application` in the `Override high DPI scaling behavior`.
+___
+
+### Do not allow pplications from taking exclusive control of sound adapter
+There are cases when applications takes control over sound adapter adjusting volume level automatically messing with our settings. Also, it means that only one application at a time can use your audio interface.
+
+To prevent such behavior open `Control Panel` and go to `Sound` section, select your device and from `Advanced` tab uncheck `Allow applications to take exclusive control of this device` checkbox.
