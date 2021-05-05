@@ -26,7 +26,18 @@ You can enable long path support editing the registry key or administrative temp
 `Computer Configuration > Administrative Templates > System > Filesystem > Enable Win32 long paths`.
 ___
 
-### Package manager
+### Tools and applications
+A short list of tools I use:
+* [Windows Terminal](https://aka.ms/terminal)
+* [Starship prompt](https://starship.rs)
+* [Visual Studio Code](https://code.visualstudio.com)
+* [PowerShell Core](https://github.com/PowerShell/PowerShell)
+* [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+
+Fonts:
+* [Cascadia Code](https://github.com/microsoft/cascadia-code)
+
+#### Package manager
 For dev-related stuff I use [Scoop](https://scoop.sh) with `main` and [extras](https://github.com/lukesampson/scoop-extras) buckets.
 
 To install scoop:
@@ -51,6 +62,8 @@ Packages I usually install:
 ```
 aws bind fnm jq psutils ripgrep starship terraform
 ```
+
+___
 
 ### Caveats
 
