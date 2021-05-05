@@ -1,7 +1,7 @@
 # zomg-windows-desktop
 
 ## What's that?
-This repository contains information regarding my Windows setup and some scripts and utils in use.
+This repository contains information regarding my Windows setup and some scripts and utils I use.
 ___
 ### Preparation
 #### Enable symlink support for standard (non-administrator) accounts
