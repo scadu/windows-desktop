@@ -33,7 +33,7 @@ A short list of tools I use:
 * [Visual Studio Code](https://code.visualstudio.com)
 * [PowerShell Core](https://github.com/PowerShell/PowerShell)
 * [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
-* [Python)(https://www.python.org) - installed with [installer provided by upstream](https://www.python.org/downloads/release/python3)
+* [Python](https://www.python.org) - installed with [installer provided by upstream](https://www.python.org/downloads/release/python3)
 
 Fonts:
 * [Cascadia Code](https://github.com/microsoft/cascadia-code)
