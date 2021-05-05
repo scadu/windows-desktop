@@ -26,13 +26,14 @@ You can enable long path support editing the registry key or administrative temp
 `Computer Configuration > Administrative Templates > System > Filesystem > Enable Win32 long paths`.
 ___
 
-### Tools and applications
+### Tools, applications, languages
 A short list of tools I use:
 * [Windows Terminal](https://aka.ms/terminal)
 * [Starship (shell prompt)](https://starship.rs)
 * [Visual Studio Code](https://code.visualstudio.com)
 * [PowerShell Core](https://github.com/PowerShell/PowerShell)
 * [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+* [Python)(https://www.python.org) - installed with [installer provided by upstream](https://www.python.org/downloads/release/python3)
 
 Fonts:
 * [Cascadia Code](https://github.com/microsoft/cascadia-code)
