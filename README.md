@@ -63,6 +63,12 @@ Packages I usually install:
 aws bind fnm jq psutils ripgrep starship terraform
 ```
 
+##### Keeping envirionment up to date
+
+
+For this purpose I've created a small script that updates applications with [PatchMyPC](https://patchmypc.com) and [Scoop](https://scoop.sh).
+Additionally, it also checks for available security and critical Windows updates with [PSWindowsUpdate PowerShell module](https://www.powershellgallery.com/packages/PSWindowsUpdate/2.2.0.2).
+
 ___
 
 ### Caveats
