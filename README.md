@@ -48,7 +48,7 @@ Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.
 iwr -useb get.scoop.sh | iex
 ```
 
-⚠️ If you get an error you might need to change the execution policy (i.e. enable Powershell) with
+⚠️ If you get an error you might need to change the execution policy (i.e. enable Powershell) with:
 ```
 Set-ExecutionPolicy RemoteSigned -scope CurrentUser
 ```
