@@ -26,6 +26,32 @@ You can enable long path support editing the registry key or administrative temp
 `Computer Configuration > Administrative Templates > System > Filesystem > Enable Win32 long paths`.
 ___
 
+### Package manager
+For dev-related stuff I use [Scoop](https://scoop.sh) with `main` and [extras](https://github.com/lukesampson/scoop-extras) buckets.
+
+To install scoop:
+```
+Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+
+# or shorter
+iwr -useb get.scoop.sh | iex
+```
+
+⚠️ If you get an error you might need to change the execution policy (i.e. enable Powershell) with
+```
+Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+```
+
+To add `extras` bucket:
+```
+scoop bucket add extras
+```
+
+Packages I usually install:
+```
+aws bind fnm jq psutils ripgrep starship terraform
+```
+
 ### Caveats
 
 #### High DPI
