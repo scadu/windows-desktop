@@ -18,7 +18,7 @@ More information can be found in [Microsoft docs](https://docs.microsoft.com/en-
 
 You can enable long path support editing the registry key or administrative template in the Group Policy that controls this registry key.
 ##### Registry key
-> Run as administrator
+⚠️ Run as administrator
 
 `Set-ItemProperty 'HKLM:\System\CurrentControlSet\Control\FileSystem' -Name 'LongPathsEnabled' -value 1`
 
