@@ -29,7 +29,7 @@ ___
 ### Tools and applications
 A short list of tools I use:
 * [Windows Terminal](https://aka.ms/terminal)
-* [Starship prompt](https://starship.rs)
+* [Starship (shell prompt)](https://starship.rs)
 * [Visual Studio Code](https://code.visualstudio.com)
 * [PowerShell Core](https://github.com/PowerShell/PowerShell)
 * [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
