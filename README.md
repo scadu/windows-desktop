@@ -85,7 +85,7 @@ scoop bucket add extras
 Packages I usually install:
 
 ```
-aws bind fnm jq psutils ripgrep starship terraform
+aws bind fnm jq psutils ripgrep starship
 ```
 
 ##### Keeping envirionment up to date
