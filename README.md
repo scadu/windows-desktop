@@ -55,7 +55,7 @@ A short list of tools I use:
 
 Fonts:
 
-- [Cascadia Code](https://github.com/microsoft/cascadia-code)
+* [Cascadia Code](https://github.com/microsoft/cascadia-code) - currently shipped with the [Windows Terminal](https://aka.ms/terminal)
 
 #### Package manager
 
