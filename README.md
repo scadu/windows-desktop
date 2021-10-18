@@ -41,15 +41,17 @@ You can enable long path support editing the registry key or administrative temp
 
 A short list of tools I use:
 
-- [Windows Terminal](https://aka.ms/terminal)
-- [Starship (shell prompt)](https://starship.rs)
-- [Visual Studio Code](https://code.visualstudio.com)
-- [PowerShell Core](https://github.com/PowerShell/PowerShell)
-- [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
-- [Python](https://www.python.org) - installed with [installer provided by upstream](https://www.python.org/downloads/release/python3)
-- [ShutUp10](https://www.oo-software.com/en/shutup10) - "Free antispy tool for Windows 10". Use with default settings, you don't want to mess with Windows internals.
-- [Patch My PC Home Updater](https://patchmypc.com/home-updater) - keeps your application updated.
-- [Sysinternals](https://docs.microsoft.com/en-us/sysinternals/)
+* [Windows Terminal](https://aka.ms/terminal)
+* [Starship (shell prompt)](https://starship.rs)
+* [Visual Studio Code](https://code.visualstudio.com)
+* [PowerShell Core](https://github.com/PowerShell/PowerShell)
+* [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+* [Python](https://www.python.org) - installed with [installer provided by upstream](https://www.python.org/downloads/release/python3)
+* [ShutUp10](https://www.oo-software.com/en/shutup10) - "Free antispy tool for Windows 10". Use with default settings, you don't want to mess with Windows internals.
+* [Patch My PC Home Updater](https://patchmypc.com/home-updater) - keeps your application updated.
+* [Sysinternals](https://docs.microsoft.com/en-us/sysinternals/)
+* [PowerToys](https://docs.microsoft.com/en-us/windows/powertoys/) - a set of utilities for power users to tune and streamline their Windows 10 experience for greater productivity.
+  - [FancyZones](https://docs.microsoft.com/en-us/windows/powertoys/fancyzones) - a window manager that makes it easy to create complex window layouts and quickly position windows into those layouts.
 
 Fonts:
 
