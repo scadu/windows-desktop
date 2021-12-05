@@ -5,7 +5,7 @@ $WslDistro = "Ubuntu"
 function Get-WslUpdate {
     Write-Output "Updating $WslDistro packages"
     wsl -d $WslDistro -u root -e apt-get update -qq
-    wsl -d $WslDistro -u root -e apt-get upgrade -yq
+    wsl -d $WslDistro -u root -e apt-get upgrade --with-new-pkgs -yq
     # Check if it exited with a non-zero status
     if (!$?) {
         Write-Error "$WslDistro upgrade failed"
