@@ -5,38 +5,6 @@
 This repository contains information regarding my Windows setup and some scripts and utils I use.
 
 ---
-
-### Preparation
-
-#### Enable symlink support for standard (non-administrator) accounts
-
-You can do it by enabling [Developer Mode](https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development), or [updating the Local Security Policy](#local-security-policy).
-
-###### Local Security Policy
-
-Open `Local Security Policy` (`secpol.msc`) and go to `Local Policies` -> `User Rights Assignment`, select `Create symbolic links`, add your user to the list and **reboot**.
-
-> I haven't found a reliable way to automate it.
-> It's possible to export Local Security Policy to a file, edit the file and import back but I'm not convinced of this method.
-
-#### Enable long paths
-
-More information can be found in [Microsoft docs](https://docs.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation#enable-long-paths-in-windows-10-version-1607-and-later).
-
-You can enable long path support editing the registry key or administrative template in the Group Policy that controls this registry key.
-
-##### Registry key
-
-⚠️ Run as administrator
-
-`Set-ItemProperty 'HKLM:\System\CurrentControlSet\Control\FileSystem' -Name 'LongPathsEnabled' -value 1`
-
-##### Group policy
-
-`Computer Configuration > Administrative Templates > System > Filesystem > Enable Win32 long paths`.
-
----
-
 ### Tools, applications, languages
 
 A short list of tools I use:
@@ -63,16 +31,17 @@ For dev-related stuff I use [Scoop](https://scoop.sh) with `main` and [extras](h
 
 To install scoop:
 
-```
+```powershell
 Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
-
-# or shorter
+```
+or
+```powershell
 iwr -useb get.scoop.sh | iex
 ```
 
 ⚠️ If you get an error you might need to change the execution policy (i.e. enable Powershell) with:
 
-```
+```powershell
 Set-ExecutionPolicy RemoteSigned -scope CurrentUser
 ```
 
@@ -97,6 +66,31 @@ Additionally, it also checks for available security and critical Windows updates
 
 ### Caveats
 
+### Symlinks and junctions
+Some applications may require symlinks which require special privileges.
+These privileges can be assigned to the user by enabling [Developer Mode](https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development), or [updating the Local Security Policy](#local-security-policy).
+
+###### Local Security Policy
+
+Open `Local Security Policy` (`secpol.msc`) and go to `Local Policies` -> `User Rights Assignment`, select `Create symbolic links`, add your user to the list and **reboot**.
+
+⚠️ I would recommend doing so only when absolutely required, e.g. the tooling you use doesn't support [junctions](https://docs.microsoft.com/en-us/windows/win32/fileio/hard-links-and-junctions#junctions)
+
+More detail about junctions on [superuser.com](https://superuser.com/a/343079).
+___
+
+### Long paths
+While `MAX_PATH` limitations have been removed in Windows 10, version 1607, the behavior remains opt-in.
+
+More information can be found in [Microsoft docs](https://docs.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation#enable-long-paths-in-windows-10-version-1607-and-later).
+
+To enable long paths from PowerShell creating a registry key (run as admin):
+```powershell
+New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" `
+-Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
+```
+
+
 #### High DPI
 
 [Windows scaling issues](https://support.microsoft.com/en-us/topic/windows-scaling-issues-for-high-dpi-devices-508483cd-7c59-0d08-12b0-960b99aa347d)
@@ -109,7 +103,7 @@ For some reason, the trick with compatibility mode works for [PatchMyPC](https:/
 
 ---
 
-### Do not allow pplications from taking exclusive control of sound adapter
+### Prevent applications from taking exclusive control of sound adapter
 
 There are cases when applications takes control over sound adapter adjusting volume level automatically messing with our settings. Also, it means that only one application at a time can use your audio interface.
 
