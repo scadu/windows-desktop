@@ -11,4 +11,4 @@ if ($DockerProcesses ) {
 
 wsl --shutdown
 Get-ChildItem -Path $env:LOCALAPPDATA -Include ext4.vhdx -File -Recurse -Depth 3 -ErrorAction SilentlyContinue |
-ForEach-Object -Parallel { Write-Output $_.fullname; Optimize-VHD -Path $_.fullname -Mode full }
+ForEach-Object -AsJob -Parallel { Optimize-VHD -Path $_.fullname -Mode full; Write-Output $_.fullname } | Receive-Job -Wait -AutoRemoveJob
