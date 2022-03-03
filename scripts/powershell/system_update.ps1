@@ -1,5 +1,5 @@
 $ErrorActionPreference = "Stop"
-$BinariesDirectory = "$HOME\.bin\"
+$BinariesDirectory = "$HOME\bin\"
 $WslDistro = "Ubuntu"
 
 function Get-WslUpdate {
