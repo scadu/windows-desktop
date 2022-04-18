@@ -1,5 +1,5 @@
 $ErrorActionPreference = "Stop"
-$BinariesDirectory = "$HOME\bin\"
+$BinariesDirectory = "$HOME\bin"
 $WslDistro = "Ubuntu"
 
 function Get-WslUpdate {
@@ -15,7 +15,7 @@ function Get-WslUpdate {
 function Get-ScoopUpdate {
     try {
         Write-Output "Updating scoop packages"
-        scoop update *
+        Start-Process -RunAsUser { scoop update * }
     }
     catch [System.Management.Automation.CommandNotFoundException] {
         Write-Output "Scoop not found. Skipping"
