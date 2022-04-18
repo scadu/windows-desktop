@@ -114,7 +114,7 @@ When working with WSL2, Docker Desktop uses WSL to manage virtual hard drives (`
 Those virtual hard drives can grow quite significantly even if you've cleaned up some space.
 Virtual hard drives can be optimized with [Optimize-VHD](https://docs.microsoft.com/en-us/powershell/module/hyper-v/optimize-vhd).
 
-I've written [a dead simple script](scripts/powershell/optimize_vhdx.ps1) to find `ext4.vhdx` files and optimize them.
+I've written [a dead simple script](scripts/powershell/Optimize-VHDX.ps1) to find `ext4.vhdx` files and optimize them.
 
 #### Bonus
 Scott Hanselman blog post: [Shrink your WSL2 Virtual Disks and Docker Images and Reclaim Disk Space](https://www.hanselman.com/blog/shrink-your-wsl2-virtual-disks-and-docker-images-and-reclaim-disk-space)
