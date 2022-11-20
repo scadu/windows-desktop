@@ -54,7 +54,7 @@ scoop bucket add extras
 Packages I usually install:
 
 ```
-aws bind fnm jq psutils ripgrep starship
+bind ripgrep starship
 ```
 
 ##### Keeping envirionment up to date
