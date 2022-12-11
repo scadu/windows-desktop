@@ -1,5 +1,5 @@
 $ErrorActionPreference = "Stop"
-$BinariesDirectory = "$HOME\bin\"
+$AppsDirectory = "$HOME\Apps\"
 $WslDistro = "Ubuntu"
 
 function Get-WslUpdate {
@@ -23,14 +23,17 @@ function Get-ScoopUpdate {
 }
 
 function Get-ProgramsUpdate {
+    if (-not (Test-Path -Path $AppsDirectory)) {
+        New-Item $AppsDirectory -ItemType Directory | Out-Null
+    }
     $PatchMyPCBinary = "https://patchmypc.com/freeupdater/PatchMyPC.exe"
-    if (-not(Test-Path $BinariesDirectory\PatchMyPC.exe -PathType Leaf)) {
+    if (-not(Test-Path $AppsDirectory\PatchMyPC.exe -PathType Leaf)) {
         Write-Warning "PatchMyPC not found. Downloading..."
-        Invoke-WebRequest $PatchMyPCBinary -OutFile "$BinariesDirectory\PatchMyPC.exe"
+        Invoke-WebRequest $PatchMyPCBinary -OutFile "$AppsDirectory\PatchMyPC.exe"
     }
     try {
         Write-Output "Updating programs with PatchMyPC"
-        Start-Process -FilePath "$BinariesDirectory\PatchMyPC.exe" -ArgumentList "/auto"
+        Start-Process -FilePath "$AppsDirectory\PatchMyPC.exe" -ArgumentList "/auto"
     }
     catch {
         Write-Error "Error: $($_.Exception.Message)"
@@ -54,5 +57,5 @@ function Get-WindowsUpdate {
 
 Get-ProgramsUpdate
 Get-WslUpdate
-Get-ScoopUpdate
-Get-WindowsUpdate
+# Get-ScoopUpdate
+# Get-WindowsUpdate
