@@ -98,8 +98,6 @@ New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" `
 
 [Make older apps or programs compatible with Windows 10](https://support.microsoft.com/en-us/windows/make-older-apps-or-programs-compatible-with-windows-10-783d6dd7-b439-bdb0-0490-54eea0f45938)
 
-For some reason, the trick with compatibility mode works for [PatchMyPC](https://patchmypc.com/home-updater) (which is DPI-unaware), when setting `Application` in the `Override high DPI scaling behavior`.
-
 ---
 
 ### Prevent applications from taking exclusive control of sound adapter
