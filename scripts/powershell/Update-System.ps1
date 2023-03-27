@@ -56,6 +56,6 @@ function Get-WindowsUpdate {
 }
 
 Get-ProgramsUpdate
-# Get-WslUpdate
+Get-WslUpdate
 # Get-ScoopUpdate
 # Get-WindowsUpdate
