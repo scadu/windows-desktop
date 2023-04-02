@@ -14,7 +14,6 @@ A short list of tools I use:
 * [Visual Studio Code](https://code.visualstudio.com)
 * [PowerShell Core](https://github.com/PowerShell/PowerShell)
 * [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
-* [Python](https://www.python.org) - installed with [installer provided by upstream](https://www.python.org/downloads/release/python3)
 * [ShutUp10](https://www.oo-software.com/en/shutup10) - "Free antispy tool for Windows 10". Use with default settings, you don't want to mess with Windows internals.
 * [Patch My PC Home Updater](https://patchmypc.com/home-updater) - keeps your application updated.
 * [Sysinternals](https://docs.microsoft.com/en-us/sysinternals/)
@@ -25,19 +24,11 @@ Fonts:
 
 * [Cascadia Code](https://github.com/microsoft/cascadia-code) - currently shipped with the [Windows Terminal](https://aka.ms/terminal)
 
-#### Package manager
+### Bootstrap
 
-For dev-related stuff I use [Scoop](https://scoop.sh) with `main` and [extras](https://github.com/lukesampson/scoop-extras) buckets.
+I use [DevMachineSetup](https://gist.github.com/scadu/ca3f0d4ee8ed148df9b182c44396a7fd) to quickly setup new workstation.
+Not that I do that frequently, but it's handy.
 
-To install scoop:
-
-```powershell
-Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
-```
-or
-```powershell
-iwr -useb get.scoop.sh | iex
-```
 
 ⚠️ If you get an error you might need to change the execution policy (i.e. enable Powershell) with:
 
@@ -45,21 +36,16 @@ iwr -useb get.scoop.sh | iex
 Set-ExecutionPolicy RemoteSigned -scope CurrentUser
 ```
 
-To add `extras` bucket:
+#### Package manager
 
-```
-scoop bucket add extras
-```
+I used to use [Scoop](https://scoop.sh) with `main` and [extras](https://github.com/lukesampson/scoop-extras) buckets for some time.
 
-Packages I usually install:
+At the moment (April 2023) I try to stick to [winget](https://learn.microsoft.com/en-us/windows/package-manager/).
 
-```
-bind ripgrep starship
-```
 
 ##### Keeping envirionment up to date
 
-For this purpose I've created a small script that updates applications with [PatchMyPC](https://patchmypc.com) and [Scoop](https://scoop.sh).
+For this purpose I've created a small script that updates applications with [PatchMyPC](https://patchmypc.com) and [winget](https://scoop.sh).
 Additionally, it also checks for available security and critical Windows updates with [PSWindowsUpdate PowerShell module](https://www.powershellgallery.com/packages/PSWindowsUpdate/2.2.0.2).
 
 ---
