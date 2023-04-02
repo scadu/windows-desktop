@@ -9,14 +9,11 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
       - name: Run PSScriptAnalyzer
         uses: ./ # Uses an action in the root directory
         with:
           path: '.\'
           recurse: true
-          includeRule: '"PSAvoidGlobalAliases", "PSAvoidUsingConvertToSecureStringWithPlainText"'
           output: 'results.sarif'
       - name: Upload SARIF results file
         uses: github/codeql-action/upload-sarif@v1
