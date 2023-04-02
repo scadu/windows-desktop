@@ -26,7 +26,7 @@ Fonts:
 
 ### Bootstrap
 
-I use [DevMachineSetup](https://gist.github.com/scadu/ca3f0d4ee8ed148df9b182c44396a7fd) to quickly setup new workstation.
+I use [DevMachineSetup](./scripts/powershell/DevMachineSetup.ps1) to quickly setup new workstation.
 Not that I do that frequently, but it's handy.
 
 
