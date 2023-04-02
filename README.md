@@ -1,4 +1,4 @@
-# zomg-windows-desktop
+# windows-desktop
 
 ## What's that?
 
