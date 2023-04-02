@@ -10,10 +10,11 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Run PSScriptAnalyzer
-        uses: ./ # Uses an action in the root directory
+        uses: microsoft/psscriptanalyzer-action@v1.0
         with:
           path: '.\'
           recurse: true
+          includeRule: '"PSAvoidGlobalAliases", "PSAvoidUsingConvertToSecureStringWithPlainText"'
           output: 'results.sarif'
       - name: Upload SARIF results file
         uses: github/codeql-action/upload-sarif@v1
