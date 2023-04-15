@@ -44,6 +44,7 @@ $apps = @(
     @{name = "Git.Git" }, 
     @{name = "GitHub.cli" },
     @{name = "GoLang.Go.1.20" },
+    @{name = "Python.Python.3.11" },
     @{name = "Google.Drive" }, 
     @{name = "Microsoft.PowerShell" }, 
     @{name = "Microsoft.PowerToys" }, 
