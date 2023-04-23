@@ -12,16 +12,6 @@ function Get-WslUpdate {
     }
 }
 
-function Get-ScoopUpdate {
-    try {
-        Write-Output "Updating scoop packages"
-        scoop update *
-    }
-    catch [System.Management.Automation.CommandNotFoundException] {
-        Write-Output "Scoop not found. Skipping"
-    }
-}
-
 function Get-ProgramsUpdate {
     if (-not (Test-Path -Path $AppsDirectory)) {
         New-Item $AppsDirectory -ItemType Directory | Out-Null
@@ -42,20 +32,17 @@ function Get-ProgramsUpdate {
 
 function Get-WindowsUpdate {
     Write-Output "Looking for Windows updates"
-    $WindowsUpdateModule = "PSWindowsUpdate"
-    if (-not(Get-Module -ListAvailable -Name $WindowsUpdateModule)) {
-        Install-Module -Name $WindowsUpdateModule -Confirm:$False -Force -Scope CurrentUser
+    $updates = Get-WindowsUpdate -Category 'SecurityUpdates', 'CriticalUpdates' -Verbose
+    if ($updates.Count -eq 0) {
+        Write-Output "No updates found"
     }
-    try {
-        # TODO: Check if it could be run with `-RunAs`
-        sudo Get-WindowsUpdate -Category 'Security Updates', 'Critical Updates' -Verbose -AcceptAll
-    }
-    catch {
-        Write-Error "Error: $($_.Exception.Message)"
+    else {
+        foreach ($update in $updates) {
+            Write-Output "$($update.Title) - $($update.Description)"
+        }
     }
 }
 
 Get-ProgramsUpdate
 Get-WslUpdate
-# Get-ScoopUpdate
-# Get-WindowsUpdate
+Get-WindowsUpdate
