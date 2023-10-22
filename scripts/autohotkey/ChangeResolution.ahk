@@ -35,13 +35,13 @@ ChangeResolution(Screen_Width := 1920, Screen_Height := 1080, Color_Depth := 32)
 ; Ctrl + Alt + F1
 ^!F1::
 {
-    ChangeResolution(1920,1080,32)
+    ChangeResolution(3440,1440,32)
     return
 }
 
 ; Ctrl + Alt + F2
 ^!F2::
 {
-    ChangeResolution(3440,1440,32)
+    ChangeResolution(1920,1080,32)
     return
 }
