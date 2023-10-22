@@ -21,13 +21,8 @@ A short list of tools I use:
   
 
 ## Scripts
-## PowerShell
-
-## AutoHotkey
-Use [InstallAutoStart.ps1](./scripts/autohotkey/InstallAutoStart.ps1) to add AutoHotkey scripts to autostart for the current user.
-### [ChangeResolution.ahk](./scripts/autohotkey/ChangeResolution.ahk)
-This one is used to... change display resolution! Handy for gaming when wide screen might not be supported, or does not make much sense for certain titles.
-### Bootstrap
+### PowerShell
+#### Bootstrap
 
 I use [DevMachineSetup](./scripts/powershell/DevMachineSetup.ps1) to quickly setup new workstation.
 Not that I do that frequently, but it's handy.
@@ -38,7 +33,7 @@ Not that I do that frequently, but it's handy.
 Set-ExecutionPolicy RemoteSigned -scope CurrentUser
 ```
 
-### Update-System
+#### Update-System
 
 For this purpose I've created a small script that updates applications with [PatchMyPC](https://patchmypc.com) and [winget](https://scoop.sh).
 Additionally, it also checks for available security and critical Windows updates with [PSWindowsUpdate PowerShell module](https://www.powershellgallery.com/packages/PSWindowsUpdate/2.2.0.2).
@@ -52,6 +47,12 @@ I've written [a dead simple script](scripts/powershell/Optimize-VHDX.ps1) to fin
 
 #### Bonus
 Scott Hanselman blog post: [Shrink your WSL2 Virtual Disks and Docker Images and Reclaim Disk Space](https://www.hanselman.com/blog/shrink-your-wsl2-virtual-disks-and-docker-images-and-reclaim-disk-space)
+
+
+### AutoHotkey
+Use [InstallAutoStart.ps1](./scripts/autohotkey/InstallAutoStart.ps1) to add AutoHotkey scripts to autostart for the current user.
+#### [ChangeResolution.ahk](./scripts/autohotkey/ChangeResolution.ahk)
+This one is used to... change display resolution! Handy for gaming when wide screen might not be supported, or does not make much sense for certain titles.
 
 
 ## Package manager
