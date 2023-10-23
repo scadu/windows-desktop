@@ -98,7 +98,7 @@ You may run `wsl --export` and `wsl --import` or use tools like [wslcompact](htt
 If you feel adventurous, you may use feature available in pre-release version of WSL - [sparsevhd](https://devblogs.microsoft.com/commandline/windows-subsystem-for-linux-september-2023-update/).
 To install pre-release version:
 ```shell
-https://devblogs.microsoft.com/commandline/windows-subsystem-for-linux-september-2023-update/
+wsl --update; wsl --update --pre-release
 ```
 
 Sample `~/.wslconfig`:
