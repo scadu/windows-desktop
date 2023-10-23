@@ -38,28 +38,11 @@ Set-ExecutionPolicy RemoteSigned -scope CurrentUser
 For this purpose I've created a small script that updates applications with [PatchMyPC](https://patchmypc.com) and [winget](https://scoop.sh).
 Additionally, it also checks for available security and critical Windows updates with [PSWindowsUpdate PowerShell module](https://www.powershellgallery.com/packages/PSWindowsUpdate/2.2.0.2).
 
-### Shrink WSL2 Virtual Disks
-When working with WSL2, Docker Desktop uses WSL to manage virtual hard drives (`ext4.vhdx`).
-Those virtual hard drives can grow quite significantly even if you've cleaned up some space.
-Virtual hard drives can be optimized with [Optimize-VHD](https://docs.microsoft.com/en-us/powershell/module/hyper-v/optimize-vhd).
-
-I've written [a dead simple script](scripts/powershell/Optimize-VHDX.ps1) to find `ext4.vhdx` files and optimize them.
-
-#### Bonus
-Scott Hanselman blog post: [Shrink your WSL2 Virtual Disks and Docker Images and Reclaim Disk Space](https://www.hanselman.com/blog/shrink-your-wsl2-virtual-disks-and-docker-images-and-reclaim-disk-space)
-
 
 ### AutoHotkey
 Use [InstallAutoStart.ps1](./scripts/autohotkey/InstallAutoStart.ps1) to add AutoHotkey scripts to autostart for the current user.
 #### [ChangeResolution.ahk](./scripts/autohotkey/ChangeResolution.ahk)
 This one is used to... change display resolution! Handy for gaming when wide screen might not be supported, or does not make much sense for certain titles.
-
-
-## Package manager
-
-I used to use [Scoop](https://scoop.sh) with `main` and [extras](https://github.com/lukesampson/scoop-extras) buckets for some time.
-
-At the moment (April 2023) I try to stick to [winget](https://learn.microsoft.com/en-us/windows/package-manager/).
 
 
 ---
@@ -104,3 +87,41 @@ New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" `
 There are cases when applications takes control over sound adapter adjusting volume level automatically messing with our settings. Also, it means that only one application at a time can use your audio interface.
 
 To prevent such behavior open `Control Panel` and go to `Sound` section, select your device and from `Advanced` tab uncheck `Allow applications to take exclusive control of this device` checkbox.
+
+___
+
+### WSL
+#### VHDX size 
+By default, VHD virtual hard drive used for storage by WSL distributions won't release unused space.
+
+You may run `wsl --export` and `wsl --import` or use tools like [wslcompact](https://github.com/okibcn/wslcompact/) to automate that process.
+If you feel adventurous, you may use feature available in pre-release version of WSL - [sparsevhd](https://devblogs.microsoft.com/commandline/windows-subsystem-for-linux-september-2023-update/).
+To install pre-release version:
+```shell
+https://devblogs.microsoft.com/commandline/windows-subsystem-for-linux-september-2023-update/
+```
+
+Sample `~/.wslconfig`:
+```
+# Settings apply across all Linux distros running on WSL 2
+[wsl2]
+
+# Disable page reporting so WSL retains all allocated memory claimed from Windows and releases none back when free
+# pageReporting=false
+
+# Turn off default connection to bind WSL 2 localhost to Windows localhost
+# localhostforwarding=true
+
+# Disables nested virtualization
+# nestedVirtualization=false
+
+# Turns on output console showing contents of dmesg when opening a WSL 2 distro for debugging
+# debugConsole=true
+
+# Enable experimental features
+[experimental]
+sparseVhd=true
+# Automatically releases cached memory after detecting idle CPU usage.
+# Set to gradual for slow release, and dropcache for instant release of cached memory.
+autoMemoryReclaim=gradual
+```
