@@ -2,6 +2,18 @@ $ErrorActionPreference = "Stop"
 $AppsDirectory = "$HOME\Apps\"
 $WslDistro = "Ubuntu"
 
+# Based on https://github.com/crutkas/buildScripts/blob/dcc8312814137d7acc1f893289e846e6a9b3ef76/WSL_Setup.ps1#L13-L23
+$mypath = $MyInvocation.MyCommand.Path
+Write-Output "Path of the script : $mypath"
+$isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+
+# Restarting as Admin
+if (!$isAdmin) {
+	Start-Process PowerShell -Verb RunAs "-NoProfile -ExecutionPolicy Bypass -NoExit -Command `"cd '$pwd'; & '$mypath' $Args;`"";
+	exit;
+}
+
+
 function Get-WslUpdate {
     Write-Output "Updating $WslDistro packages"
     wsl -d $WslDistro -u root -e apt-get update -qq
