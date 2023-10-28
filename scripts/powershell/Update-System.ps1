@@ -13,6 +13,8 @@ function Get-WslUpdate {
 }
 
 function Get-ProgramsUpdate {
+    Write-Output "Updating winget packages"
+    winget upgrade --all
     if (-not (Test-Path -Path $AppsDirectory)) {
         New-Item $AppsDirectory -ItemType Directory | Out-Null
     }
