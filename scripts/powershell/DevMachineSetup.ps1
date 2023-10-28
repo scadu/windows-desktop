@@ -1,5 +1,16 @@
 # Moved from gist: https://gist.github.com/scadu/ca3f0d4ee8ed148df9b182c44396a7fd
 
+$mypath = $MyInvocation.MyCommand.Path
+Write-Output "Path of the script : $mypath"
+$isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+
+# Restarting as Admin
+# Based on https://github.com/crutkas/buildScripts/blob/dcc8312814137d7acc1f893289e846e6a9b3ef76/WSL_Setup.ps1
+if (!$isAdmin) {
+	Start-Process PowerShell -Verb RunAs "-NoProfile -ExecutionPolicy Bypass -NoExit -Command `"cd '$pwd'; & '$mypath' $Args;`"";
+	exit;
+}
+
 # Install WinGet
 # Based on this gist: https://gist.github.com/crutkas/6c2096eae387e544bd05cde246f23901
 $hasPackageManager = Get-AppPackage -name "Microsoft.DesktopAppInstaller"
@@ -36,47 +47,7 @@ $settingsJson | Out-File $settingsPath -Encoding utf8
 
 #Install New apps
 Write-Output "Installing Apps"
-$apps = @(
-    @{name = "AgileBits.1Password" }, 
-    @{name = "Google.Chrome" },
-    @{name = "7zip.7zip" }, 
-    @{name = "Docker.DockerDesktop" },
-    @{name = "Git.Git" }, 
-    @{name = "GitHub.cli" },
-    @{name = "GoLang.Go.1.20" },
-    @{name = "Python.Python.3.10" },
-    @{name = "Google.Drive" }, 
-    @{name = "Microsoft.PowerShell" }, 
-    @{name = "Microsoft.PowerToys" }, 
-    @{name = "Microsoft.VisualStudioCode" }, 
-    @{name = "Microsoft.WindowsTerminal"; source = "msstore" }, 
-    @{name = "Starship.Starship" },
-    @{name = "Valve.Steam" },
-    @{name = "OpenWhisperSystems.Signal" },
-    @{name = "REALiX.HWiNFO"},
-    @{name = "Xbox"; source = "msstore" }
-);
-
-foreach ($app in $apps) {
-    try {
-        $listApp = winget list --exact -q $app.name --accept-source-agreements 
-        if (![String]::Join("", $listApp).Contains($app.name)) {
-            Write-Host "Installing: $($app.name)"
-            if ($null -ne $app.source) {
-                winget install --exact --silent $app.name --source $app.source --accept-package-agreements
-            }
-            else {
-                winget install --exact --silent $app.name --accept-package-agreements
-            }
-        }
-        else {
-            Write-Host "Skipping install of $($app.name)"
-        }
-    }
-    catch {
-        Write-Output "Error installing $($app.name): $_"
-    }
-}
+winget import --disable-interactivity --no-upgrade --accept-source-agreements --accept-package-agreements -i scripts/powershell/DevMachine_winget.json
 
 # Remove Apps
 Write-Output "Removing Apps"
