@@ -3,7 +3,7 @@
 ; The function ChangeResolution changes the screen resolution.
 ; It accepts width, height and bit depth as parameters.
 ; Original code: https://www.reddit.com/r/AutoHotkey/comments/11w816x/autohotkey_v2_code_to_change_screen_resolution/
-ChangeResolution(Screen_Width := 1920, Screen_Height := 1080, Color_Depth := 32)
+ChangeResolution(Screen_Width, Screen_Height, Color_Depth)
 {
     ; Create a buffer to hold device information, initialized with 0s.
     ; Its size is 156, matching the size of the DEVMODE struct used by Windows API for display settings.
