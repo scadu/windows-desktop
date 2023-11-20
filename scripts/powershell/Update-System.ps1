@@ -61,4 +61,4 @@ function Get-WinUpdate {
 
 Get-ProgramsUpdate
 Get-WslUpdate
-Get-WinUpdate
+# Get-WinUpdate
