@@ -26,21 +26,26 @@ function Get-WslUpdate {
 
 function Get-ProgramsUpdate {
     Write-Output "Updating winget packages"
-    winget upgrade --all
+    # Using Start-Process to control the execution flow with -Wait 
+    # to ensure PatchMyPC won't start until winget finishes
+    Start-Process -FilePath "winget" -ArgumentList "upgrade --all" -NoNewWindow -Wait
+
     if (-not (Test-Path -Path $AppsDirectory)) {
         New-Item $AppsDirectory -ItemType Directory | Out-Null
     }
+
     $PatchMyPCBinary = "https://patchmypc.com/freeupdater/PatchMyPC.exe"
     if (-not(Test-Path $AppsDirectory\PatchMyPC.exe -PathType Leaf)) {
         Write-Warning "PatchMyPC not found. Downloading..."
         Invoke-WebRequest $PatchMyPCBinary -OutFile "$AppsDirectory\PatchMyPC.exe"
     }
+
     try {
         Write-Output "Updating programs with PatchMyPC"
-        Start-Process -FilePath "$AppsDirectory\PatchMyPC.exe" -ArgumentList "/auto"
+        Start-Process -FilePath "$AppsDirectory\PatchMyPC.exe" -ArgumentList "/auto" -Wait
     }
     catch {
-        Write-Error "Error: $($_.Exception.Message)"
+        Write-Error "Error in PatchMyPC update: $($_.Exception.Message)"
     }
 }
 
