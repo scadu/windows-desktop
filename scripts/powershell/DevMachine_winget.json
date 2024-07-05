@@ -1,23 +1,11 @@
 {
 	"$schema": "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate": "2023-10-28T12:48:31.989-00:00",
+	"CreationDate": "2024-07-05T19:25:48.293-00:00",
 	"Sources": [
 		{
 			"Packages": [
 				{
 					"PackageIdentifier": "7zip.7zip"
-				},
-				{
-					"PackageIdentifier": "OpenWhisperSystems.Signal"
-				},
-				{
-					"PackageIdentifier": "AutoHotkey.AutoHotkey"
-				},
-				{
-					"PackageIdentifier": "Canonical.Ubuntu.2204"
-				},
-				{
-					"PackageIdentifier": "Discord.Discord"
 				},
 				{
 					"PackageIdentifier": "Docker.DockerDesktop"
@@ -26,52 +14,88 @@
 					"PackageIdentifier": "Git.Git"
 				},
 				{
-					"PackageIdentifier": "Google.Chrome"
-				},
-				{
 					"PackageIdentifier": "REALiX.HWiNFO"
 				},
 				{
-					"PackageIdentifier": "Microsoft.WindowsTerminal"
-				},
-				{
-					"PackageIdentifier": "Valve.Steam"
+					"PackageIdentifier": "Mozilla.Firefox"
 				},
 				{
 					"PackageIdentifier": "AntibodySoftware.WizTree"
 				},
 				{
-					"PackageIdentifier": "Twilio.Authy"
-				},
-				{
 					"PackageIdentifier": "Microsoft.PowerShell"
-				},
-				{
-					"PackageIdentifier": "GoLang.Go"
-				},
-				{
-					"PackageIdentifier": "Logitech.LogiTune"
-				},
-				{
-					"PackageIdentifier": "Google.GoogleDrive"
-				},
-				{
-					"PackageIdentifier": "Starship.Starship"
-				},
-				{
-					"PackageIdentifier": "Microsoft.VisualStudioCode"
-				},
-				{
-					"PackageIdentifier": "Microsoft.PowerToys"
-				},
-				{
-					"PackageIdentifier": "GitHub.cli"
 				},
 				{
 					"PackageIdentifier": "AgileBits.1Password"
 				},
 				{
+					"PackageIdentifier": "Starship.Starship"
+				},
+				{
+					"PackageIdentifier": "GitHub.cli"
+				},
+				{
+					"PackageIdentifier": "Google.Chrome"
+				},
+				{
+					"PackageIdentifier": "CodeSector.TeraCopy"
+				},
+				{
+					"PackageIdentifier": "dorssel.usbipd-win"
+				},
+				{
+					"PackageIdentifier": "GoLang.Go"
+				},
+				{
+					"PackageIdentifier": "FastStone.Viewer"
+				},
+				{
+					"PackageIdentifier": "Valve.Steam"
+				},
+				{
+					"PackageIdentifier": "Microsoft.DotNet.DesktopRuntime.6"
+				},
+				{
+					"PackageIdentifier": "Python.Launcher"
+				},
+				{
+					"PackageIdentifier": "Microsoft.PowerToys"
+				},
+				{
+					"PackageIdentifier": "OpenWhisperSystems.Signal"
+				},
+				{
+					"PackageIdentifier": "AutoHotkey.AutoHotkey"
+				},
+				{
+					"PackageIdentifier": "BurntSushi.ripgrep.MSVC"
+				},
+				{
+					"PackageIdentifier": "Discord.Discord"
+				},
+				{
+					"PackageIdentifier": "ajeetdsouza.zoxide"
+				},
+				{
+					"PackageIdentifier": "Twilio.Authy"
+				},
+				{
+					"PackageIdentifier": "junegunn.fzf"
+				},
+				{
+					"PackageIdentifier": "Microsoft.VisualStudioCode"
+				},
+				{
 					"PackageIdentifier": "Python.Python.3.12"
+				},
+				{
+					"PackageIdentifier": "Canonical.Ubuntu.2204"
+				},
+				{
+					"PackageIdentifier": "Microsoft.AppInstaller"
+				},
+				{
+					"PackageIdentifier": "Microsoft.WindowsTerminal"
 				}
 			],
 			"SourceDetails": {
@@ -82,5 +106,5 @@
 			}
 		}
 	],
-	"WinGetVersion": "1.7.2782-preview"
+	"WinGetVersion": "1.9.1792-preview"
 }
