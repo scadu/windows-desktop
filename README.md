@@ -18,6 +18,7 @@ A short list of tools I use:
 * [PowerToys](https://docs.microsoft.com/en-us/windows/powertoys/) - a set of utilities for power users to tune and streamline their Windows 10 experience for greater productivity.
   - [FancyZones](https://docs.microsoft.com/en-us/windows/powertoys/fancyzones) - a window manager that makes it easy to create complex window layouts and quickly position windows into those layouts.
 - [WinGet](https://learn.microsoft.com/en-gb/windows/package-manager/) - Windows Package Manager
+- [NirSoft](https://www.nirsoft.net/) - Freeware utilities: password recovery, system utilities, desktop utilities 
   
 
 ## Scripts
