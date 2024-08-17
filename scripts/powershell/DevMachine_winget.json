@@ -1,6 +1,6 @@
 {
 	"$schema": "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate": "2024-07-05T19:25:48.293-00:00",
+	"CreationDate": "2024-08-17T11:53:46.362-00:00",
 	"Sources": [
 		{
 			"Packages": [
@@ -23,19 +23,22 @@
 					"PackageIdentifier": "AntibodySoftware.WizTree"
 				},
 				{
-					"PackageIdentifier": "Microsoft.PowerShell"
-				},
-				{
-					"PackageIdentifier": "AgileBits.1Password"
-				},
-				{
-					"PackageIdentifier": "Starship.Starship"
+					"PackageIdentifier": "GoLang.Go"
 				},
 				{
 					"PackageIdentifier": "GitHub.cli"
 				},
 				{
+					"PackageIdentifier": "AgileBits.1Password"
+				},
+				{
 					"PackageIdentifier": "Google.Chrome"
+				},
+				{
+					"PackageIdentifier": "Starship.Starship"
+				},
+				{
+					"PackageIdentifier": "Microsoft.PowerShell"
 				},
 				{
 					"PackageIdentifier": "CodeSector.TeraCopy"
@@ -44,7 +47,7 @@
 					"PackageIdentifier": "dorssel.usbipd-win"
 				},
 				{
-					"PackageIdentifier": "GoLang.Go"
+					"PackageIdentifier": "Adobe.CreativeCloud"
 				},
 				{
 					"PackageIdentifier": "FastStone.Viewer"
@@ -53,13 +56,10 @@
 					"PackageIdentifier": "Valve.Steam"
 				},
 				{
-					"PackageIdentifier": "Microsoft.DotNet.DesktopRuntime.6"
+					"PackageIdentifier": "Microsoft.PowerToys"
 				},
 				{
 					"PackageIdentifier": "Python.Launcher"
-				},
-				{
-					"PackageIdentifier": "Microsoft.PowerToys"
 				},
 				{
 					"PackageIdentifier": "OpenWhisperSystems.Signal"
@@ -71,25 +71,22 @@
 					"PackageIdentifier": "BurntSushi.ripgrep.MSVC"
 				},
 				{
-					"PackageIdentifier": "Discord.Discord"
+					"PackageIdentifier": "TIDALMusicAS.TIDAL"
 				},
 				{
 					"PackageIdentifier": "ajeetdsouza.zoxide"
 				},
 				{
-					"PackageIdentifier": "Twilio.Authy"
-				},
-				{
 					"PackageIdentifier": "junegunn.fzf"
 				},
 				{
-					"PackageIdentifier": "Microsoft.VisualStudioCode"
+					"PackageIdentifier": "zyedidia.micro"
 				},
 				{
 					"PackageIdentifier": "Python.Python.3.12"
 				},
 				{
-					"PackageIdentifier": "Canonical.Ubuntu.2204"
+					"PackageIdentifier": "Microsoft.VisualStudioCode"
 				},
 				{
 					"PackageIdentifier": "Microsoft.AppInstaller"
@@ -106,5 +103,5 @@
 			}
 		}
 	],
-	"WinGetVersion": "1.9.1792-preview"
+	"WinGetVersion": "1.9.2151-preview"
 }

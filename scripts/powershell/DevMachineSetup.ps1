@@ -101,7 +101,7 @@ else {
 Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -OutVariable WSLStatus | Out-Null
 if ($WSLStatus.State -ne "Enabled") {
     try {
-        wsl --install
+        wsl --install -d Ubuntu-24.04
         Write-Output "WSL installation initiated."
     }
     catch {
