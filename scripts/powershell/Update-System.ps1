@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Stop"
 $AppsDirectory = "$HOME\Apps\"
-$WslDistro = "Ubuntu"
+$WslDistro = "Ubuntu-24.04"
 
 # Based on https://github.com/crutkas/buildScripts/blob/dcc8312814137d7acc1f893289e846e6a9b3ef76/WSL_Setup.ps1#L13-L23
 $mypath = $MyInvocation.MyCommand.Path

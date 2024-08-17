@@ -7,7 +7,7 @@ This repository contains information regarding my Windows setup and some scripts
 
 A short list of tools I use:
 
-* [Windows Terminal](https://aka.ms/terminal)
+* [Windows Terminal](https://github.com/microsoft/terminal)
 * [Starship (shell prompt)](https://starship.rs)
 * [Visual Studio Code](https://code.visualstudio.com)
 * [PowerShell Core](https://github.com/PowerShell/PowerShell)
