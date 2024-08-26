@@ -1,3 +1,4 @@
+#NoTrayIcon
 ; Source: https://github.com/microsoft/PowerToys/issues/2954#issuecomment-1881754076
 !`::
 {
