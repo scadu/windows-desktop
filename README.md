@@ -13,11 +13,12 @@ A short list of tools I use:
 * [PowerShell Core](https://github.com/PowerShell/PowerShell)
 * [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 * [ShutUp10](https://www.oo-software.com/en/shutup10) - "Free antispy tool for Windows 10". Use with default settings, you don't want to mess with Windows internals.
-* [Patch My PC Home Updater](https://patchmypc.com/home-updater) - keeps your application updated
+* [Patch My PC Home Updater](https://patchmypc.com/home-updater) - Simplify third-party patching on your home PC
 * [Sysinternals](https://docs.microsoft.com/en-us/sysinternals/)
 * [PowerToys](https://docs.microsoft.com/en-us/windows/powertoys/) - a set of utilities for power users to tune and streamline their Windows 10 experience for greater productivity.
   - [FancyZones](https://docs.microsoft.com/en-us/windows/powertoys/fancyzones) - a window manager that makes it easy to create complex window layouts and quickly position windows into those layouts.
-- [WinGet](https://learn.microsoft.com/en-gb/windows/package-manager/) - Windows Package Manager
+- [WinGet](https://learn.microsoft.com/en-gb/windows/package-manager/) - Windows Package Manager. I use it to install most of the desktop apps.
+- [Scoop](https://scoop.sh/) - sometimes needed for developer tooling that's not available via winget.
 - [NirSoft](https://www.nirsoft.net/) - Freeware utilities: password recovery, system utilities, desktop utilities 
   
 
