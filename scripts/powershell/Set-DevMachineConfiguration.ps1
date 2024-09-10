@@ -1,4 +1,3 @@
-# DevMachineSetup.ps1
 # Script to set up a new Windows development machine
 
 $ErrorActionPreference = 'Stop'

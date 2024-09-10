@@ -26,7 +26,7 @@ A short list of tools I use:
 ### PowerShell
 #### Bootstrap
 
-I use [DevMachineSetup](./scripts/powershell/DevMachineSetup.ps1) to quickly setup new workstation.
+I use [Set-DevMachineConfiguration](./scripts/powershell/Set-DevMachineConfiguration.ps1) to quickly setup new workstation.
 Not that I do that frequently, but it's handy.
 
 ⚠️ If you get an error you might need to change the execution policy (i.e. enable Powershell) with:
@@ -37,8 +37,8 @@ Set-ExecutionPolicy RemoteSigned -scope CurrentUser
 
 #### Update-System
 
-For this purpose I've created a small script that updates applications with [PatchMyPC](https://patchmypc.com) and [winget](https://scoop.sh).
-Additionally, it also checks for available security and critical Windows updates with [PSWindowsUpdate PowerShell module](https://www.powershellgallery.com/packages/PSWindowsUpdate/2.2.0.2).
+[Update-DevEnvironment.ps1](./scripts/powershell/Update-DevEnvironment.ps1) updates installed programs via [PatchMyPC](https://patchmypc.com) and [winget](https://learn.microsoft.com/en-gb/windows/package-manager/).
+Additionally, it also checks for available security and critical Windows updates with [PSWindowsUpdate PowerShell module](https://www.powershellgallery.com/packages/PSWindowsUpdate/).
 
 
 ### AutoHotkey
