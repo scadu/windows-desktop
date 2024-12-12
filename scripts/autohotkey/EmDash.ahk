@@ -1,4 +1,5 @@
 #Requires AutoHotkey v2.0
+#NoTrayIcon
 
 ; This hotstring will convert -- to em dash (—)
 ; The * means you don't need to press space/enter after typing
